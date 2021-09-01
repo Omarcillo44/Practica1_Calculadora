@@ -95,22 +95,22 @@ public class MainActivity extends AppCompatActivity {
         tv.setText("");
     }
 
-    public void onClickSuma(View miView)
+    public void onClicksuma(View miView)
     {
         operador="+";
         onClickOperacionCapturaNumero1(miView);
     }
-    public void onClickResta(View miView)
+    public void onClickresta(View miView)
     {
         operador="-";
         onClickOperacionCapturaNumero1(miView);
     }
-    public void onClickMultiplicacion(View miView)
+    public void onClickmultiplicacion(View miView)
     {
         operador="*";
         onClickOperacionCapturaNumero1(miView);
     }
-    public void onClickDivision(View miView)
+    public void onClickdivision(View miView)
     {
         operador="/";
         onClickOperacionCapturaNumero1(miView);
@@ -123,6 +123,48 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(tv.getText() + ".");
     }
 
+    public void onClickseno(View miView)
+    {
+        TextView tv = (TextView) findViewById(R.id.numeros) ;
+
+        numero1 = Double.parseDouble(tv.getText().toString());
+
+        try {
+            resultado = Math.sin(numero1*2.0*Math.PI/360.0);
+
+            tv.setText(resultado.toString());
+        }catch(NumberFormatException nfe){
+            Toast.makeText(this,"Numero Incorrecto", LENGTH_SHORT).show();
+        }
+    }
+    public void onClicktan(View miView)
+    {
+        TextView tv = (TextView) findViewById(R.id.numeros) ;
+
+        numero1 = Double.parseDouble(tv.getText().toString());
+
+        try {
+            resultado= Math.tan(numero1*2.0*Math.PI/360.0);
+
+            tv.setText(resultado.toString());
+        }catch(NumberFormatException nfe){
+            Toast.makeText(this,"Numero Incorrecto", LENGTH_SHORT).show();
+        }
+    }
+    public void onClickcoseno(View miView)
+    {
+        TextView tv = (TextView) findViewById(R.id.numeros);
+
+        numero1 = Double.parseDouble(tv.getText().toString());
+
+        try {
+            resultado= Math.cos(numero1*2.0*Math.PI/360.0);
+
+            tv.setText(resultado.toString());
+        }catch(NumberFormatException nfe){
+            Toast.makeText(this,"Numero Incorrecto", LENGTH_SHORT).show();
+        }
+    }
     public void onClickIgual(View miView)
     {
         TextView tv = (TextView) findViewById(R.id.numeros) ;
@@ -138,6 +180,8 @@ public class MainActivity extends AppCompatActivity {
                 resultado = numero1 * numero2;
             } else if (operador.equals("/")) {
                 resultado = numero1 / numero2;
+            } else if (operador.equals("sin(")) {
+                resultado= Math.sin(numero2);
             }
             tv.setText(resultado.toString());
         }catch(NumberFormatException nfe){

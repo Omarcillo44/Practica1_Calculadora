@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calculadora"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBFAFA"
     tools:context=".MainActivity">
 
     <Button
@@ -103,16 +105,16 @@
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/resta"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="43dp"
         android:layout_marginTop="58dp"
         android:background="@drawable/borde2_text"
-        android:onClick="onClickResta"
+        android:onClick="onClickresta"
         android:text="-"
         app:layout_constraintStart_toEndOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+        app:layout_constraintTop_toBottomOf="@+id/multiplicacion" />
 
     <Button
         android:id="@+id/botonSuma"
@@ -121,10 +123,10 @@
         android:layout_marginStart="43dp"
         android:layout_marginTop="49dp"
         android:background="@drawable/borde2_text"
-        android:onClick="onClickSuma"
+        android:onClick="onClicksuma"
         android:text="+"
         app:layout_constraintStart_toEndOf="@+id/ButtonPuntito"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
+        app:layout_constraintTop_toBottomOf="@+id/resta" />
 
     <Button
         android:id="@+id/button11"
@@ -135,6 +137,42 @@
         android:background="@drawable/borde2_text"
         android:onClick="onClickButtonZero"
         android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <Button
+        android:id="@+id/seno"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/borde2_text"
+        android:onClick="onClickseno"
+        android:text="sin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <Button
+        android:id="@+id/coseno"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/borde2_text"
+        android:onClick="onClickcoseno"
+        android:text="cos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <Button
+        android:id="@+id/tangente"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/borde2_text"
+        android:onClick="onClicktan"
+        android:text="tan"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button8" />
 
@@ -175,25 +213,26 @@
         app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/multiplicacion"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="43dp"
         android:layout_marginTop="61dp"
         android:background="@drawable/borde2_text"
-        android:onClick="onClickMultiplicacion"
+        android:onClick="onClickmultiplicacion"
         android:text="*"
         app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
+        app:layout_constraintTop_toBottomOf="@+id/division" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/division"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="43dp"
         android:layout_marginTop="53dp"
         android:background="@drawable/borde2_text"
-        android:onClick="onClickDivision"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onClickdivision"
         android:text="/"
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/numeros" />
